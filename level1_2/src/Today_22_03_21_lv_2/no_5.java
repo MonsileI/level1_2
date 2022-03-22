@@ -7,20 +7,20 @@ public class no_5 {
 		int w = 8;
 		int h = 12;
 		
-		// 8 * 12 = 96인데, 16은 어디에서 나온 숫자일까?
-		// 3 * 4 = 12 근데 6은 어떻게 된거지?
-		System.out.println(w*h-(w+h)+(gcd(w,h)));
-		
-		//20 - 최대공약수
-		
-		
-		//다시 한번 풀어보자
+	
+		//8이랑 12면, 16이라는 숫자 20 - 4
+		//6이랑 4였으면, 8이라는 숫자 10 - 2
+		//최대공약수
+		int answer = (w*h) - ((w+h)-gcd(w,h));
+	
+		System.out.println(answer);
 		
 	}
-	public static int gcd(int w,int h) {
+	
+	public static int gcd(int x, int y) {
 		
-		int max = Math.max(w, h);
-		int min = Math.min(w, h);
+		int max = Math.max(x, y);
+		int min = Math.min(x, y);
 		
 		while(min>0) {
 			int r = max%min;
@@ -29,7 +29,6 @@ public class no_5 {
 		}
 		
 		return max;
-		
 	}
 
 }
