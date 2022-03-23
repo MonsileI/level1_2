@@ -1,0 +1,31 @@
+package HaveToRepeat;
+
+public class no_32 {
+	
+	public static void main(String[] args) {
+	
+		String number = "1231234";
+		int k = 3;
+		
+		StringBuilder sb = new StringBuilder();
+		
+		int idx = 0;
+		int comp = 0;
+		for(int i =0;i<number.length()-k;i++) {
+			comp = 0;
+			for(int j=idx;j<=k+i;j++) {
+				if(comp < number.charAt(j)-'0') {
+					comp = number.charAt(j)-'0';
+					idx = j+1;
+				}
+			}
+			sb.append(comp);
+			
+		}
+		
+		
+		
+		System.out.println(sb.toString());
+		
+	}
+}

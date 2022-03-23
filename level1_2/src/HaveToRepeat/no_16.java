@@ -1,4 +1,4 @@
-package Today_22_03_22_lv_2;
+package HaveToRepeat;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,6 +43,7 @@ public class no_16 {
 			}
 			
 		}
+		
 		System.out.println(map);
 		int[] answer = new int[map.size()];
 		// Map.Entry 리스트 작성
@@ -64,7 +65,6 @@ public class no_16 {
 		for(int i=0;i<answer.length;i++) {
 			
 			String test  = keys.next();
-			
 			answer[i] = Integer.parseInt(test);
 			
 		}
