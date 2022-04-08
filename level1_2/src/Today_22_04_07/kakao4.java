@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class test {
+public class kakao4 {
 	
 	static char[][]map;
 	static int answer = 0;
@@ -63,7 +63,8 @@ public class test {
 			}
 			
 		}
-		return false;
+		answer += cnt;
+		return cnt > 0 ? true : false;
 		
 		
 	}
