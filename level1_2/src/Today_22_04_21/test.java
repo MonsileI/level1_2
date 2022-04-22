@@ -9,7 +9,7 @@ public class test {
 
 	public static void main(String[] args) {
 		
-		int[][]temp = {{1,0,0},{1,0,1},{1,0,1},{1,0,0},{1,1,1},{0,0,1}};
+		int[][]temp = {{1,0,0},{1,0,1},{1,0,1},{1,0,0},{1,1,1},{0,0,1},{0,0,0},{1,0,0},{1,1,1},{1,1,1}};
 		
 		int r = 2;
 		
@@ -22,29 +22,53 @@ public class test {
 		dfs(arr,check,r,range);
 		int answer =0;
 		String answerS = "";
+		
+		String[]tempS = new String[temp.length];
+		
 		for(int i=0;i<temp.length;i++) {
 			String s = "";
-			int count = 0;
 			for(int j=0;j<temp[0].length;j++) {
-				s += temp[i][j];
+				s += String.valueOf(temp[i][j]);	
 			}
+			tempS[i] = s;
 			
-			for(String str : set){
-				if(str.equals(s)) {
-					count++;
-				}
-			}
-			
-			if(count>answer) {
-				answer = count;
-				answerS = s;
-			}
+			System.out.println(tempS[i]);
 		}
 		
 		
-		System.out.println(set);
 		
-		System.out.println(answerS);
+		
+		for(String str : set) {
+			
+			int count = 0;
+			
+			for(int i=0;i<tempS.length;i++) {
+				
+				if(str.equals(tempS[i])) {
+					count++;
+					continue;
+				}else {
+					for(int j=0;j<tempS[i].length();j++) {
+						if(str.charAt(j)=='0'&&tempS[i].charAt(j)=='1') {
+							count--;
+							break;
+						}
+					}
+					
+					count++;
+				}
+				
+			}
+			
+				
+			answer = Math.max(count, answer);
+			
+			
+		}
+		
+		System.out.println(answer);
+		
+		
 	}
 	
 	public static void dfs(int[]arr,boolean[]check,int r,int range) {
