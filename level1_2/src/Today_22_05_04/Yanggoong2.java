@@ -3,7 +3,7 @@ package Today_22_05_04;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Yanggoong {
+public class Yanggoong2 {
 
 	
 	  static ArrayList<int[]> answer = new ArrayList<>();
